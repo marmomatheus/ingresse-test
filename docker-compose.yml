@@ -1,0 +1,60 @@
+version: "3"
+services:
+    nginx:
+        build:
+            dockerfile: ./docker/nginx.dockerfile
+            context: .
+        image: ingresse-test-nginx
+        container_name: ingresse-test-nginx
+        ports:
+            - 80:80
+        networks: 
+            - ingresse-test-network
+        depends_on: 
+            - "php-fpm"
+        volumes:
+            - ./src:/var/www/ingresse-test
+    
+    php-fpm:
+        image: ingresse-test-php-fpm
+        build:
+            dockerfile: ./docker/php-fpm.dockerfile
+            context: .
+        container_name: ingresse-test-php-fpm
+        volumes:
+            - ./src:/var/www/ingresse-test
+        working_dir: /var/www/ingresse-test
+        networks:
+            - ingresse-test-network
+        depends_on:
+            - "mysql"
+
+    mysql:
+        image: mysql:5.5
+        container_name: ingresse-test-mysql
+        environment:
+            MYSQL_LOG_CONSOLE: 0
+            MYSQL_ROOT_PASSWORD: 123456
+            MYSQL_DATABASE: ingresse_test
+        networks:
+            - ingresse-test-network
+
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin:latest
+        container_name: ingresse-test-phpmyadmin
+        ports:
+            - 8080:80
+        environment:
+            PMA_HOST: "mysql"
+            PMA_USER: "root"
+            PMA_PASSWORD: "123456"
+        networks:
+            - ingresse-test-network
+        links:
+            - mysql
+        depends_on:
+            - "mysql"   
+
+networks:
+    ingresse-test-network:
+        driver: bridge
