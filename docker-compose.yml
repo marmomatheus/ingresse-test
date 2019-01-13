@@ -11,16 +11,16 @@ services:
         networks: 
             - ingresse-test-network
         depends_on: 
-            - "php-fpm"
+            - "application"
         volumes:
             - ./src:/var/www/ingresse-test
     
-    php-fpm:
+    application:
         image: ingresse-test-php-fpm
         build:
             dockerfile: ./docker/php-fpm.dockerfile
             context: .
-        container_name: ingresse-test-php-fpm
+        container_name: ingresse-test-application
         volumes:
             - ./src:/var/www/ingresse-test
         working_dir: /var/www/ingresse-test
