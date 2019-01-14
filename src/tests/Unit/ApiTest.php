@@ -25,5 +25,24 @@ class ApiTest extends TestCase
         $response = $this->withHeaders($this->headers)->json('POST', '/api/register', $user); 
         $response->assertStatus(201);
         $response->assertJsonStructure(['message', 'user', 'token']);        
-    }     
+    }   
+
+    /**
+     * Testando login
+     *
+     * @return void
+     * @test
+    */
+    public function login()
+    {        
+        $userFactory = factory(User::class)->make();  
+
+        $user = $userFactory->makeVisible('password')->toArray();
+            
+        $newUser = $this->withHeaders($this->headers)->json('POST', '/api/register', $user);                
+
+        $response = $this->withHeaders($this->headers)->json('POST', '/api/login', ['email' => $user['email'], 'password' => $user['password']]);
+        $response->assertStatus(200);
+        $response->assertJsonStructure(['message', 'token']);            
+    }    
 }
