@@ -18,21 +18,24 @@ class UserController extends Controller
 
      /**
      * Lista todos os usuários cadastrados
+     * @param  \App\Repositories\UserRepository $userRepository
      * @return \App\User
      */
-    public function index()
+    public function index(UserRepository $userRepository)
     {
-        return UserModel::all();
+        $users = $userRepository->getAll();
+        return $users;
     }
 
      /**
      * Mostra um usuário especifico
+     * @param  \App\Repositories\UserRepository $userRepository
      * @param  int  $id Id do usuário que deve ser mostrado
      * @return \App\User
      */
-    public function show($id)
+    public function show(UserRepository $userRepository, $id)
     {
-        return UserModel::findOrFail($id);
+        return $userRepository->get($id);
     }
 
       /**
