@@ -16,16 +16,31 @@ class UserController extends Controller
         $this->middleware('auth:api');
     }
 
+     /**
+     * Lista todos os usuários cadastrados
+     * @return \App\User
+     */
     public function index()
     {
         return UserModel::all();
     }
 
+     /**
+     * Mostra um usuário especifico
+     * @param  int  $id Id do usuário que deve ser mostrado
+     * @return \App\User
+     */
     public function show($id)
     {
         return UserModel::findOrFail($id);
     }
 
+      /**
+     * Salva um novo usuário
+     * @param  \App\Http\Requests\UserRequest $userRequest
+     * @param  \App\Repositories\UserRepository $userRepository
+     * @return \Illuminate\Http\Response
+     */
     public function store(UserRequest $userRequest, UserRepository $userRepository)
     {
         $user = $userRepository->save($userRequest);
@@ -41,6 +56,13 @@ class UserController extends Controller
         }
     }
 
+    /**
+     * Edita um usuário existente
+     * @param  \App\Http\Requests\UserRequest $userRequest
+     * @param  \App\Repositories\UserRepository $userRepository
+     * @param  int  $id Id do usuário que deve ser editado
+     * @return \Illuminate\Http\Response
+     */
     public function update(UserRequest $userRequest, UserRepository $userRepository, $id)
     {
         $user = $userRepository->save($userRequest, $id);
@@ -55,7 +77,13 @@ class UserController extends Controller
             ], 400);
         }
     }
-
+    
+    /**
+     * Deleta um usuário existente
+     * @param  \App\Repositories\UserRepository $userRepository
+     * @param  int  $id Id do usuário que deve ser deletado
+     * @return \Illuminate\Http\Response
+     */
     public function destroy(UserRepository $userRepository, $id)
     {
         if ($userRepository->delete($id)) {

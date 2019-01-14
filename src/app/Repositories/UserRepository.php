@@ -40,6 +40,12 @@ class UserRepository {
         }
     }
 
+     /**
+     * Deleta um usuário
+     *     
+	 * @param  int $id Id do usuário que deve ser deletado
+     * @return bool
+     */
     public function delete($id)
     {
         $user = User::findOrFail($id);

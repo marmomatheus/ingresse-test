@@ -28,6 +28,9 @@ services:
             - ingresse-test-network
         depends_on:
             - "mysql"
+            - "redis"
+        environment:
+            REDIS_HOST: "redis"
 
     mysql:
         image: mysql:5.5
@@ -36,6 +39,12 @@ services:
             MYSQL_LOG_CONSOLE: 0
             MYSQL_ROOT_PASSWORD: 123456
             MYSQL_DATABASE: ingresse_test
+        networks:
+            - ingresse-test-network
+
+    redis: 
+        image: redis:alpine
+        container_name: ingresse-test-redis
         networks:
             - ingresse-test-network
 
