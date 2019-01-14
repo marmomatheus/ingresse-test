@@ -6,7 +6,7 @@ services:
   - docker
 
 before_install:
-  - ./startUp.sh 
+  - sudo ./startUp.sh 
 
 script:
   - docker exec -it ingresse-test-application vendor/bin/phpunit
