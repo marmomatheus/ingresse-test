@@ -6,6 +6,7 @@ services:
   - docker
 
 before_install:
+  - chmod a+x startUp.sh
   - sudo ./startUp.sh 
 
 script:
