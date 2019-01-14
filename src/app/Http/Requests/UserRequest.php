@@ -26,7 +26,7 @@ class UserRequest extends FormRequest
         $rules = [            
             'name' => 'string|required|max:191',          
             'email' => 'email|required',      
-            'cpf' => 'string|required|max:11'    
+            'cpf' => 'string|required|cpf'    
         ];
         if ($this->method() != 'PUT') {
             $rules['password'] = 'string|min:6|required';
@@ -35,5 +35,12 @@ class UserRequest extends FormRequest
             $rules['password'] = 'string|min:6|nullable';
         }
         return $rules;
+    }
+
+    public function messages()
+    {
+        return [
+            'cpf.cpf' => 'Invalid CPF'
+        ];
     }
 }
