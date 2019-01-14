@@ -1,0 +1,306 @@
+{
+	"_type": "export",
+	"__export_format": 3,
+	"__export_date": "2019-01-14T23:13:14.508Z",
+	"__export_source": "insomnia.desktop.app:v6.3.2",
+	"resources": [
+		{
+			"_id": "wrk_0ec3160219cd42dab1eee0a4fd6b4460",
+			"created": 1545309671070,
+			"description": "",
+			"modified": 1547427326250,
+			"name": "Ingresse Test",
+			"parentId": null,
+			"_type": "workspace"
+		},
+		{
+			"_id": "env_c12bf1780bc24ec197a8778ad8c37837",
+			"color": null,
+			"created": 1545309671141,
+			"data": {
+				"baseUrl": "http://localhost/"
+			},
+			"isPrivate": false,
+			"metaSortKey": 1545309671141,
+			"modified": 1547427373783,
+			"name": "New Environment",
+			"parentId": "wrk_0ec3160219cd42dab1eee0a4fd6b4460",
+			"_type": "environment"
+		},
+		{
+			"_id": "jar_739f8a0052584ab8bed44bd4190c7955",
+			"cookies": [],
+			"created": 1545309671151,
+			"modified": 1545309671151,
+			"name": "Default Jar",
+			"parentId": "wrk_0ec3160219cd42dab1eee0a4fd6b4460",
+			"_type": "cookie_jar"
+		},
+		{
+			"_id": "fld_eb22aa2663ba4506b8c15e0d024bf270",
+			"created": 1545488930161,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1539305296263,
+			"modified": 1547427300140,
+			"name": "Users",
+			"parentId": "wrk_0ec3160219cd42dab1eee0a4fd6b4460",
+			"_type": "request_group"
+		},
+		{
+			"_id": "req_fdfbbd4d9bc547e28a36da8369a3a75a",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"name\": \"Matheus\",\n\t\"email\": \"matheusmarmo55@gmail.com\",\n\t\"cpf\": \"42012243843\",\n\t\"password\": \"123456\"\n}"
+			},
+			"created": 1545477076943,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_c2ac0f5dce0e43c19ba06742368ed24c",
+					"name": "X-Requested-With",
+					"value": "XMLHttpRequest"
+				},
+				{
+					"id": "pair_60eeb33a6eee42d0a7c37f4e757cdde8",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1545477076943,
+			"method": "POST",
+			"modified": 1547427443966,
+			"name": "Register",
+			"parameters": [],
+			"parentId": "wrk_0ec3160219cd42dab1eee0a4fd6b4460",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ baseUrl  }}api/register",
+			"_type": "request"
+		},
+		{
+			"_id": "req_1b74995012ee47d5a6d7b07f25f691d4",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\t\n\t\"email\": \"matheusmarmo55@gmail.com\"\t,\t\n\t\"password\": \"123456\"\n}"
+			},
+			"created": 1545487303185,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_c2ac0f5dce0e43c19ba06742368ed24c",
+					"name": "X-Requested-With",
+					"value": "XMLHttpRequest"
+				},
+				{
+					"id": "pair_60eeb33a6eee42d0a7c37f4e757cdde8",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1539305296313,
+			"method": "POST",
+			"modified": 1547503694102,
+			"name": "Login",
+			"parameters": [],
+			"parentId": "wrk_0ec3160219cd42dab1eee0a4fd6b4460",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ baseUrl  }}api/login",
+			"_type": "request"
+		},
+		{
+			"_id": "req_5b9bf12dcb444b8dbfe9e8e0ca471c23",
+			"authentication": {
+				"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijg5MmY4MjU3ZGY3YTQxZDliNTY1YzY4YzNmODc0YTRhNmQ4YzU3MWRmZDI2ZWFhYjFkOWIyZDlkMzJmY2JhNGI4ZTZiOGVkMmE3NzM5MjgwIn0.eyJhdWQiOiIxIiwianRpIjoiODkyZjgyNTdkZjdhNDFkOWI1NjVjNjhjM2Y4NzRhNGE2ZDhjNTcxZGZkMjZlYWFiMWQ5YjJkOWQzMmZjYmE0YjhlNmI4ZWQyYTc3MzkyODAiLCJpYXQiOjE1NDc1MDM2OTcsIm5iZiI6MTU0NzUwMzY5NywiZXhwIjoxNTc5MDM5Njk3LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.pq6VaFR0ZWgzX5SSKPLz0jJog1ByUKrMlkptvYZCqYbLJ6i-E2jOvqnzSKEhx-2n_F072WAN5Fypr37kjE10NoI6mcvL-3r8dnSsPdv7xe3Kod4EECWXaOGXd7tUXZoKhfFFVjnt_ezwJOWjhYeNncMCWYmfkXQ7icFsHjjq9vvBzOxsNRJSEz5t44PfxXKQcSGTT5tBtEMpw5SYxvD6f6kbtXqyLFwDPl0VvJYdcOcRXNfWvhtbbGn1egv2kuTnmNtJLjErfNLO21eKWilH8EhyBPzeNE5UR2fCOkMD5XNsUvZJDg-13TP3u0TjUd1EqAyx6zU68wJW14Ue7bcquQpuPWSb5k_XARbml6PvO4Fq4-FRYQLOsIcUlvhArCRtFOm6q1sglD6336OlB_UBerFdclY1H5-tyZ71fS5D5-YGmc0AqctKeaxVicUf-Wvk9xM-Dfzmv3hJZ6WHq0nPkRMLeMT5lt2JICI1csV49Qo1d-sb_WgytK1l3uE_sBaHY-CBZiCPIStd9YflcT6BH5kGzVhyO3kEfWkmCA0JRe4glysGB_o8HSMUeJ_13onj-76zGCSCLnZaqH0Jnk54JNuosxrJcnQ-Wsk-LW1LNOpVGJgzVllrS06dIqcig44HlcwLnl-TyayuUc-nMursfAQwlRiQ__RKQdpgFenVHUI",
+				"type": "bearer"
+			},
+			"body": {},
+			"created": 1545488945023,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_944feec54d7f4706a863befceb0893fb",
+					"name": "X-Requested-With",
+					"value": "XMLHttpRequest"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1545488945023,
+			"method": "GET",
+			"modified": 1547503715151,
+			"name": "Get all",
+			"parameters": [],
+			"parentId": "fld_eb22aa2663ba4506b8c15e0d024bf270",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ baseUrl  }}api/users",
+			"_type": "request"
+		},
+		{
+			"_id": "req_f4c7a655f25342fb82920243234ff169",
+			"authentication": {
+				"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImY2NDlmNjcwNDdiNjM4YjRlNjIzNmE5ZDk5ODFiMjY0NDc1NWMzY2JhZDRlZDI0NmExNWZmZmJlM2QxNTkyZjA0Y2Q0ZjU3ZDJjOTJmODQwIn0.eyJhdWQiOiIxIiwianRpIjoiZjY0OWY2NzA0N2I2MzhiNGU2MjM2YTlkOTk4MWIyNjQ0NzU1YzNjYmFkNGVkMjQ2YTE1ZmZmYmUzZDE1OTJmMDRjZDRmNTdkMmM5MmY4NDAiLCJpYXQiOjE1NDU0OTY3NzgsIm5iZiI6MTU0NTQ5Njc3OCwiZXhwIjoxNTc3MDMyNzc4LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.MG8ky96LFU-Avu-_FTSAsoF08RHgtV3o8VANjWLLiMs5fmix0BrqMFQWbUThCT1T7D9SbZir_WgQCVBW5XhI8k0gk94oqt8i2KcnaTgssAdSosdHZMIGQ-m8zWKomRkXKCCoA43ZkQdtW_M6d7ERdM-_BDpMHu1W8Cv09FawHlQ2q2ieLTwJu6DDHZipNfdTWGEKoM_Wa8Vo0iUwXyT-jyrtg0fBLoxFDmmH7kcrYDAU0usRx7wZQb9x-3Bs3qk48a6JOJVT-bZ5fKqaeEasEgMibfkq0X_jYOzZasmQDhcQMj8BHIBMft29tmV0xWwL2CKibHdrsSYb-UoNc0pjZrfINK1YThZWx-7Rl2Z4INjDVdUl-mtkYGLkJmPCcNJKXDfayY8jSGrMwbotJHW8V40WxU4jGem60XqLXTxffAEPEo1HMUzYznsc6fM8GmWd8Xf2p7SjbffvdjQpqjTqxj8o2EtAjKFF1gVWk_Ixi0-YL5rSVjwOPaf_rkWvy9naxIgJ6XIicydXnwnQHq8P29213KNirDgdUSFdZVC-BmcVZm19ZoriCmjohZKaoxYHdl-BfOWPzqKGcB28WXx3dkHjzbBblKi2wfqQRxX_3mhMfeLzXVXE2t6OFtYxy7h1iOCnMQCy61BujjTarl2zEw3sBMLM_WVbGcusZdCCBIQ",
+				"type": "bearer"
+			},
+			"body": {},
+			"created": 1545488955076,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_e7e8c5bf8c1d45c49290e2ea2d4e2e11",
+					"name": "X-Requested-With",
+					"value": "XMLHttpRequest"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1545488955076,
+			"method": "GET",
+			"modified": 1547429166970,
+			"name": "Get",
+			"parameters": [],
+			"parentId": "fld_eb22aa2663ba4506b8c15e0d024bf270",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ baseUrl  }}api/users/2",
+			"_type": "request"
+		},
+		{
+			"_id": "req_8b31bdffc015432e81dc47f4690872b1",
+			"authentication": {
+				"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6Ijg5MmY4MjU3ZGY3YTQxZDliNTY1YzY4YzNmODc0YTRhNmQ4YzU3MWRmZDI2ZWFhYjFkOWIyZDlkMzJmY2JhNGI4ZTZiOGVkMmE3NzM5MjgwIn0.eyJhdWQiOiIxIiwianRpIjoiODkyZjgyNTdkZjdhNDFkOWI1NjVjNjhjM2Y4NzRhNGE2ZDhjNTcxZGZkMjZlYWFiMWQ5YjJkOWQzMmZjYmE0YjhlNmI4ZWQyYTc3MzkyODAiLCJpYXQiOjE1NDc1MDM2OTcsIm5iZiI6MTU0NzUwMzY5NywiZXhwIjoxNTc5MDM5Njk3LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.pq6VaFR0ZWgzX5SSKPLz0jJog1ByUKrMlkptvYZCqYbLJ6i-E2jOvqnzSKEhx-2n_F072WAN5Fypr37kjE10NoI6mcvL-3r8dnSsPdv7xe3Kod4EECWXaOGXd7tUXZoKhfFFVjnt_ezwJOWjhYeNncMCWYmfkXQ7icFsHjjq9vvBzOxsNRJSEz5t44PfxXKQcSGTT5tBtEMpw5SYxvD6f6kbtXqyLFwDPl0VvJYdcOcRXNfWvhtbbGn1egv2kuTnmNtJLjErfNLO21eKWilH8EhyBPzeNE5UR2fCOkMD5XNsUvZJDg-13TP3u0TjUd1EqAyx6zU68wJW14Ue7bcquQpuPWSb5k_XARbml6PvO4Fq4-FRYQLOsIcUlvhArCRtFOm6q1sglD6336OlB_UBerFdclY1H5-tyZ71fS5D5-YGmc0AqctKeaxVicUf-Wvk9xM-Dfzmv3hJZ6WHq0nPkRMLeMT5lt2JICI1csV49Qo1d-sb_WgytK1l3uE_sBaHY-CBZiCPIStd9YflcT6BH5kGzVhyO3kEfWkmCA0JRe4glysGB_o8HSMUeJ_13onj-76zGCSCLnZaqH0Jnk54JNuosxrJcnQ-Wsk-LW1LNOpVGJgzVllrS06dIqcig44HlcwLnl-TyayuUc-nMursfAQwlRiQ__RKQdpgFenVHUI",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"name\": \"Matheus\",\n\t\"email\": \"matheusmarmo@gmail.com\",\n\t\"cpf\": \"42012243843\",\n\t\"password\": \"123456\"\n}"
+			},
+			"created": 1545488967850,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_9651be3cfad4454683ad6b0c59292964",
+					"name": "X-Requested-With",
+					"value": "XMLHttpRequest"
+				},
+				{
+					"id": "pair_8244cea77b6947c2ba7052e31090d359",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1545488944973,
+			"method": "POST",
+			"modified": 1547504126762,
+			"name": "Create",
+			"parameters": [],
+			"parentId": "fld_eb22aa2663ba4506b8c15e0d024bf270",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ baseUrl  }}api/users",
+			"_type": "request"
+		},
+		{
+			"_id": "req_000ea1c7bc434a089fee7d6ff39dbe9d",
+			"authentication": {
+				"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImY2NDlmNjcwNDdiNjM4YjRlNjIzNmE5ZDk5ODFiMjY0NDc1NWMzY2JhZDRlZDI0NmExNWZmZmJlM2QxNTkyZjA0Y2Q0ZjU3ZDJjOTJmODQwIn0.eyJhdWQiOiIxIiwianRpIjoiZjY0OWY2NzA0N2I2MzhiNGU2MjM2YTlkOTk4MWIyNjQ0NzU1YzNjYmFkNGVkMjQ2YTE1ZmZmYmUzZDE1OTJmMDRjZDRmNTdkMmM5MmY4NDAiLCJpYXQiOjE1NDU0OTY3NzgsIm5iZiI6MTU0NTQ5Njc3OCwiZXhwIjoxNTc3MDMyNzc4LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.MG8ky96LFU-Avu-_FTSAsoF08RHgtV3o8VANjWLLiMs5fmix0BrqMFQWbUThCT1T7D9SbZir_WgQCVBW5XhI8k0gk94oqt8i2KcnaTgssAdSosdHZMIGQ-m8zWKomRkXKCCoA43ZkQdtW_M6d7ERdM-_BDpMHu1W8Cv09FawHlQ2q2ieLTwJu6DDHZipNfdTWGEKoM_Wa8Vo0iUwXyT-jyrtg0fBLoxFDmmH7kcrYDAU0usRx7wZQb9x-3Bs3qk48a6JOJVT-bZ5fKqaeEasEgMibfkq0X_jYOzZasmQDhcQMj8BHIBMft29tmV0xWwL2CKibHdrsSYb-UoNc0pjZrfINK1YThZWx-7Rl2Z4INjDVdUl-mtkYGLkJmPCcNJKXDfayY8jSGrMwbotJHW8V40WxU4jGem60XqLXTxffAEPEo1HMUzYznsc6fM8GmWd8Xf2p7SjbffvdjQpqjTqxj8o2EtAjKFF1gVWk_Ixi0-YL5rSVjwOPaf_rkWvy9naxIgJ6XIicydXnwnQHq8P29213KNirDgdUSFdZVC-BmcVZm19ZoriCmjohZKaoxYHdl-BfOWPzqKGcB28WXx3dkHjzbBblKi2wfqQRxX_3mhMfeLzXVXE2t6OFtYxy7h1iOCnMQCy61BujjTarl2zEw3sBMLM_WVbGcusZdCCBIQ",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"name\": \"Matheus\",\n\t\"email\": \"matheusmarmo@gmail.com\",\n\t\"cpf\": \"42012243843\"\n}"
+			},
+			"created": 1545488977009,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_b1b1bb240f7e4ba4b1d7826f36c19070",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"id": "pair_6d1c5c0870794835aa18514bf2ff38cd",
+					"name": "X-Requested-With",
+					"value": "XMLHttpRequest"
+				},
+				{
+					"id": "pair_d97623e89ebb495fa608a55e3dda163a",
+					"name": "",
+					"value": ""
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1545488944923,
+			"method": "PUT",
+			"modified": 1547430317412,
+			"name": "Update",
+			"parameters": [],
+			"parentId": "fld_eb22aa2663ba4506b8c15e0d024bf270",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ baseUrl  }}api/users/2",
+			"_type": "request"
+		},
+		{
+			"_id": "req_ad4e83c9a1f34346b6c9a717db3c51e9",
+			"authentication": {
+				"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImY2NDlmNjcwNDdiNjM4YjRlNjIzNmE5ZDk5ODFiMjY0NDc1NWMzY2JhZDRlZDI0NmExNWZmZmJlM2QxNTkyZjA0Y2Q0ZjU3ZDJjOTJmODQwIn0.eyJhdWQiOiIxIiwianRpIjoiZjY0OWY2NzA0N2I2MzhiNGU2MjM2YTlkOTk4MWIyNjQ0NzU1YzNjYmFkNGVkMjQ2YTE1ZmZmYmUzZDE1OTJmMDRjZDRmNTdkMmM5MmY4NDAiLCJpYXQiOjE1NDU0OTY3NzgsIm5iZiI6MTU0NTQ5Njc3OCwiZXhwIjoxNTc3MDMyNzc4LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.MG8ky96LFU-Avu-_FTSAsoF08RHgtV3o8VANjWLLiMs5fmix0BrqMFQWbUThCT1T7D9SbZir_WgQCVBW5XhI8k0gk94oqt8i2KcnaTgssAdSosdHZMIGQ-m8zWKomRkXKCCoA43ZkQdtW_M6d7ERdM-_BDpMHu1W8Cv09FawHlQ2q2ieLTwJu6DDHZipNfdTWGEKoM_Wa8Vo0iUwXyT-jyrtg0fBLoxFDmmH7kcrYDAU0usRx7wZQb9x-3Bs3qk48a6JOJVT-bZ5fKqaeEasEgMibfkq0X_jYOzZasmQDhcQMj8BHIBMft29tmV0xWwL2CKibHdrsSYb-UoNc0pjZrfINK1YThZWx-7Rl2Z4INjDVdUl-mtkYGLkJmPCcNJKXDfayY8jSGrMwbotJHW8V40WxU4jGem60XqLXTxffAEPEo1HMUzYznsc6fM8GmWd8Xf2p7SjbffvdjQpqjTqxj8o2EtAjKFF1gVWk_Ixi0-YL5rSVjwOPaf_rkWvy9naxIgJ6XIicydXnwnQHq8P29213KNirDgdUSFdZVC-BmcVZm19ZoriCmjohZKaoxYHdl-BfOWPzqKGcB28WXx3dkHjzbBblKi2wfqQRxX_3mhMfeLzXVXE2t6OFtYxy7h1iOCnMQCy61BujjTarl2zEw3sBMLM_WVbGcusZdCCBIQ",
+				"type": "bearer"
+			},
+			"body": {},
+			"created": 1545489002099,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_3e7a463483a541f0bd28d3ee2ba33dae",
+					"name": "X-Requested-With",
+					"value": "XMLHttpRequest"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1545488944873,
+			"method": "DELETE",
+			"modified": 1547430565911,
+			"name": "Delete",
+			"parameters": [],
+			"parentId": "fld_eb22aa2663ba4506b8c15e0d024bf270",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ baseUrl  }}api/users/2",
+			"_type": "request"
+		}
+	]
+}
