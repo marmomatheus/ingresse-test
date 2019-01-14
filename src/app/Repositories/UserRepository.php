@@ -39,4 +39,15 @@ class UserRepository {
             return false;
         }
     }
+
+    public function delete($id)
+    {
+        $user = User::findOrFail($id);
+
+        if ($user->delete()) {            
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

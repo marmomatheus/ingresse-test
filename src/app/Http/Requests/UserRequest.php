@@ -13,7 +13,7 @@ class UserRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -29,10 +29,10 @@ class UserRequest extends FormRequest
             'cpf' => 'string|required|max:11'    
         ];
         if ($this->method() != 'PUT') {
-            $rules['email'] .= '|unique:users';
-            $rules['password'] = 'string|min:6|nullable';
-        } else{
             $rules['password'] = 'string|min:6|required';
+            $rules['email'] .= '|unique:users';
+        } else{
+            $rules['password'] = 'string|min:6|nullable';
         }
         return $rules;
     }

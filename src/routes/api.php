@@ -15,3 +15,4 @@ use Illuminate\Http\Request;
 
 Route::post('login', 'Api\AuthenticationController@login');
 Route::post('register', 'Api\AuthenticationController@register');
+Route::apiResource('users', 'Api\UserController');
