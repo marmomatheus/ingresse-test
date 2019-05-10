@@ -1,21 +1,10 @@
 
   
 
-# Dev Back End Test - Ingresse
+# Laravel Rest - Docker Environment
 
   
 
-  
-
-  
-
-Este repositório contem a resolução do teste apresentado via e-mail.
-
-  
-
-  
-
-  
 
 ## Sobre
 
